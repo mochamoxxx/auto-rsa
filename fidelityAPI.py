@@ -315,6 +315,9 @@ class FidelityAutomation:
             # Skip accounts that start with 'Y' (Fidelity managed)
             if row["Account Number"][0] == "Y":
                 continue
+            # Skip accounts that start with '5" (annuity)
+            if row["Account Number"][0] == "5":
+                continue
             # Get the value and remove '$' from it
             val = str(row["Current Value"]).replace("$", "").replace("-", "")
             # Get the last price
